@@ -1,0 +1,9 @@
+Q. What is Emmet?
+A. Emmet is a free add-on for our text editor that allows us to type shortcuts that are 
+   then expanded to the full pieces of code.
+
+Q. Difference between Library and Framework?
+A. Library - By Using Library we can control the flow of programe. We can invoked Library whenever 
+   and wherever we like.
+   Framework - Contrary to the Library , when we use Framework flow is controlled by Framework. Framework
+   instruct us where we put our code. It will call our code as required.
