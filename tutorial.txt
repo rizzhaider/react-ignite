@@ -7,3 +7,70 @@ A. Library - By Using Library we can control the flow of programe. We can invoke
    and wherever we like.
    Framework - Contrary to the Library , when we use Framework flow is controlled by Framework. Framework
    instruct us where we put our code. It will call our code as required.
+
+Q. What is `NPM`?
+A. It manages our packages. Our application either react, angular or any Framework or Library to make them
+   powerful and faster it's need helper packages(It just module and some piece of codes) that packages are
+   present inside NPM.
+
+Q. What is `Parcel/Webpack`? Why do we need it?
+A. Parcel is a beast. Parcel/Webpack is a bundler that makes our app faster by minifying, optimize, clean our code, 
+   create dev server , caching while development provide hot module replacement(It automatically rebuild the
+   the changed file). It's transpile our javascript code for older browsers with browserList. It caches everything. If we restart the
+   server it will rebuild only the files that have changed since the last time ran. Parcel automatically track
+   all the files, plugins, configurations and dev dependcies that involed to our build.
+
+Q. What is `.parcel-cache`?
+A. It sores all cache files.
+
+Q. What is `npx` ?
+A. Execute using npm.
+
+Q. What is difference between `dependencies` vs `devDependencies`?
+A. For application multiple packages or modules are required some for local machine and some for production server.
+   So that modules we manage with dependencies and devDependencies. dependcies thos required for production server 
+   we put in package.json file inside dependcies and thos only for development we put inside devDependencies.
+
+Q. What is Transitive dependcies?
+A. We have package manager for our app and that package have their own dependecies of others package manager.
+   and that packages have their own dependecies of package manager. So that dependency of package manager 
+   manages and handle by  of our code.
+
+Q. What is Tree Shaking?
+A. Parcel also statically analyzes the import and export of each modules and removes everything that is not used.
+   This is called "Tree shaking" or "Dead code elimination". Tree shaking supported for both dynamic and static
+   import, CommonJs, ES modules and even across languages with Css modules.
+
+Q. What is Hot Module Replacement?
+A. It's file watcher. It's check in our application if any file has changed it automatically rebuild and changed 
+   the file.
+
+Q. What is `.gitignore`? What should we add and not add into it?
+A. '.gitIgnore' is a file where we put the file or folder extenstion which we dont to push on our repo.
+   You can everything in git ignore that you can regenerate again on server.
+
+Q. What is the difference between `package.json` and `package-lock.json`?
+A. 'package.json' it maintains the version of our library dependencies which we are using in our application.
+    and 'package-lock' lock that package dependcies for us and tell us which version exactly we are using.
+
+Q. Why should I not modify `package-lock.json`?
+A. Because it is auto generated file and it's tell us which exactly version we are using of library and their 
+   dependent libabry. we should not add package-lock in .gitIgnore so the server can install same version which 
+   we are using in our dvelopment. If we change something in package-lock.json then we can face codes are breaking
+   on the server.
+
+Q. What is `node_modules` ? Is it a good idea to push that on git?
+A. Node modules are the data base of our package manager library. No we should push node_modules on git.
+   we should always put this in .gitIgnore.
+
+Q. What is the `dist` folder?
+A. It is our build folder for our applications. Everything is in minified form in dist folder.
+
+Q. What is `browserlists`?
+A. It transpile our code and make our code compatible for diffrent browser It maintains browser comtability 
+   and we can provide which browser or which version of browser our app should support. 
+   i.e ["last 2 Chrome versions"].(it will defenetly work for chrome last 2 version)
+
+Q. Read about: ^ - caret and ~ - tilda?
+A. ^ - caret : It's update to minor version if it is minor version update : i.e "1.4.5" to "1.4.6"
+   ~ - tilda: It's update to major version if it is major version update: i.1 "2.3.4" to "2.4.0"

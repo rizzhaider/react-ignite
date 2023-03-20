@@ -1,0 +1,27 @@
+/***
+ * *
+ * 
+ * Created a server
+ * HMR - Hot module replacement (Hot Reloading)
+ * File Watcher algorithm  - C++
+ * BUNDLING
+ * MINIFY
+ * Cleaning our Code
+ * Dev and Production Build
+ * Super Fast build algorithm
+ * It does Image optimization
+ * Caching while development
+ * Compression
+ * Compatible with older version of browser(It's add polyfill)
+ * HTTPS on dev machine
+ * port Numbers
+ * Consistent Hashing Algorithm
+ * Zero Config
+ * BrowserList
+ * Tree Shaking - Remove unwanted code  
+ * 
+ * 
+ * 
+ * Transitive Dependencies
+ * 
+ */
