@@ -73,4 +73,70 @@ A. It transpile our code and make our code compatible for diffrent browser It ma
 
 Q. Read about: ^ - caret and ~ - tilda?
 A. ^ - caret : It's update to minor version if it is minor version update : i.e "1.4.5" to "1.4.6"
-   ~ - tilda: It's update to major version if it is major version update: i.1 "2.3.4" to "2.4.0"
+   ~ - tilda: It's update to major version if it is major version update: i.1 "2.3.4" to "2.4.0";
+
+
+Q. Is JSX mandatory for React?
+A . NO - It's not mandatory for react. we can write code in javascript with React.createElement.
+    // React.createElement => Object => HTML(DOM)
+
+Q. Is ES6 mandatory for React?
+A. No we can write normal javascript in react.
+
+Q. {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX?
+A  {TitleComponent} --> This is React Element variable (like <h1>Hello</h1>) or Javascript function.
+   {<TitleComponent/>} --> This is react component with self closing tag or javascript function, that's returns JSX from function.
+   and we can send props(properties) via this like we send arguments and recieve param in normal javascript function.
+   {<TitleComponent></TitleComponent>} --> This same as {<TitleComponent/>}.
+
+Q. How can I write comments in JSX?
+A.  {
+    // like this
+    };
+
+Q. What is <React.Fragment></React.Fragment> and <></> ?
+A. React.Fragment is component which is exported by React. It is like empty tag (<></>). we use this because JSX
+   need to have one parent elements. If there are multiple multiline element.
+
+Q. What is Virtual DOM & What is Reconciliation in React & What is React Fiber?
+A. Virtual Dom is representation of DOM. It's Create DOM tree and it's uses Reconcilation algorithm to find out
+   the difference between Actual DOM and Virtual DOM and then finds what needs to be updated. Reconcilation use
+   Diff algorithm and it's checks which components need to be updated and it's uddate only that component not
+   whole Actual DOM.
+   React update this Reconcilation algorithm with React Fiber. It does same thing but in a faster and better way.
+
+Q. Why we need keys in React? When do we need keys in React?
+A. We need keys in React. Because Key represent the uniqness of element. It help React to what component needs to be
+   render. If we are using we can improve DOM manipulation safe with unecessary render of whole element or components.
+
+Q. Can we use index as keys in React?
+A. Yes! But if there is no uniq value for key then only.
+   no key <<<< index as Key <<<<< uniq value as key.
+
+Q. What is props in React? Ways to
+A. Via props in React component we can pass the required data. it's same like javaScript function params and arguments.
+
+Q. What is a Config Driven UI ?
+A. API controls what kind of data should shown as per requirement.
+
+
+Q. What is the difference between Named Export, Default export and * as export?
+A. In named export we import method inside {} i.e if we are exporting multiple method from one file we can use
+   named import to import all those method i.e "import {Header} from '../header' ".
+   In Default export we can import method directly without {}. Beacuse in default export we can only do one default
+   export in export file.
+   In * as export is like we are importing all method from file in a one go. But we can not use default export with
+   this.
+
+Q. What is the importance of config.js file
+A. We can put all hard coded value in config file.
+
+Q. What are React Hooks?
+A. React hooks are just a java script function.
+
+Q. Why do we need a useState Hook?
+A. React use only one way data binding. In react we can use normal local javascript variable but we can show the changed value
+   of this local variable in the UI. React has no idea about this local vairable. So React says every time you want 
+   that your variable to sync with the UI youe needs to use useState(). This means you are creating state variable.
+   If the value of state is upadated react re render whole component and it's check whats updated and re render that 
+   specific element. It is using Diff Algorithm(Reconcilation).
