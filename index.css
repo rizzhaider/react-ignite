@@ -1,4 +1,18 @@
-.header {
+/*
+Normal native css
+SCSS
+Inline CSS
+Component libraries - Material UI, Base UI, Ant, Chakra
+Styles component
+
+Tailwind css Framework
+   - CSS on the go(in the same)
+   - Reusability
+   - Less bundle size
+   - Flexible UI(Customizable)
+*/
+ 
+/* .header {
     display: flex;
     justify-content: space-between;
     margin: 10px;
@@ -9,7 +23,7 @@
     width: 100px
 }
 
-.nav-items>ul { 
+.nav-items>ul {
     list-style-type: none;
     display: flex;
 }
@@ -33,3 +47,15 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.shimmer-cards {
+    width: 300px;
+    height: 250px;
+    background: lightgray;
+    margin: 10px;
+} */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

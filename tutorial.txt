@@ -16,9 +16,9 @@ A. It manages our packages. Our application either react, angular or any Framewo
 Q. What is `Parcel/Webpack`? Why do we need it?
 A. Parcel is a beast. Parcel/Webpack is a bundler that makes our app faster by minifying, optimize, clean our code, 
    create dev server , caching while development provide hot module replacement(It automatically rebuild the
-   the changed file). It's transpile our javascript code for older browsers with browserList. It caches everything. If we restart the
-   server it will rebuild only the files that have changed since the last time ran. Parcel automatically track
-   all the files, plugins, configurations and dev dependcies that involed to our build.
+   the changed file). It's transpile our javascript code for older browsers with browserList. It caches everything. 
+   If we restart the server it will rebuild only the files that have changed since the last time ran. 
+   Parcel automatically track all the files, plugins, configurations and dev dependcies that involed to our build.
 
 Q. What is `.parcel-cache`?
 A. It sores all cache files.
@@ -29,7 +29,7 @@ A. Execute using npm.
 Q. What is difference between `dependencies` vs `devDependencies`?
 A. For application multiple packages or modules are required some for local machine and some for production server.
    So that modules we manage with dependencies and devDependencies. dependcies thos required for production server 
-   we put in package.json file inside dependcies and thos only for development we put inside devDependencies.
+   we put in package.json file inside dependcies and those only for development we put inside devDependencies.
 
 Q. What is Transitive dependcies?
 A. We have package manager for our app and that package have their own dependecies of others package manager.
@@ -79,6 +79,7 @@ A. ^ - caret : It's update to minor version if it is minor version update : i.e 
 Q. Is JSX mandatory for React?
 A . NO - It's not mandatory for react. we can write code in javascript with React.createElement.
     // React.createElement => Object => HTML(DOM)
+
 
 Q. Is ES6 mandatory for React?
 A. No we can write normal javascript in react.
@@ -140,3 +141,289 @@ A. React use only one way data binding. In react we can use normal local javascr
    that your variable to sync with the UI youe needs to use useState(). This means you are creating state variable.
    If the value of state is upadated react re render whole component and it's check whats updated and re render that 
    specific element. It is using Diff Algorithm(Reconcilation).
+
+Q. What is a Microservice?
+A. Microservice architecture enables to deliver large, compex application, rapidly frequently. We sepreate on large
+   architecture into small chunk of piece. Like UI is sepreate, BE is sepreate, Authentication is sepreate,
+   notification is sepreate and so all.
+
+Q. What is Monolith architecture?
+A. Monolith architecture is whole application in one source. All FE BE all in one single project.
+
+Q. Why do we need a useEffect Hook?
+A. useEffect is React hooks, in this hooks we pass two arguments in params first is callback function and second is
+   dependency array. This callback function calls on every render of component. But we can control this callback 
+   render by passing empty array [] in second arguments. If you want to render this callback function for any state
+   variable change then we can pass that state variable inside this second arguments array.
+   But useEffect callback is always called after the render.
+   If we are passing empty array then it will calls only once after render on page load.
+   If we are not passing dependency array it will after every render.
+   We can create several useEffect according to our use cases.
+
+Q. What is Optional Chaining?
+A. Optional chaining means we are rendering data with check that if data is available or not. Instead of using 
+   if else condition we can direct do check with optiona chaining. 
+   i.e. data?.cards?.person
+
+Q. What is Shimmer UI?
+A. Shimmer UI is loading or resembles the page's actual UI before loading actual data.
+
+Q. What is the difference between JS expression and JS statement?
+A. JS expression is like if we are directly getting output or JS produce a value without any operation.
+   JS statement - A javascript program is a sequence of statements. Each statement is an instruction for 
+   the computer to do something.
+
+Q. What is Conditional Rendering, explain with a code example?
+A. Conditional rendering is we are render JSX with condition.
+
+Q. What is CORS?
+A. Cross origin resource sharing is a system , consisiting of transmitting HTTP Headers, Thats determines weather
+  browser block frontend javascript code from accessing response for cross-orgin request. 
+  example -  we are giving permission to access our resource for allowed domain. Only allowed domain can access
+  the data from other resource.
+
+Q. What is async and await?
+A. Async and await keywords enables asynchronous, promise-based behavior to be written in a cleaner style, avoiding
+   the need to explicity configure promise chain.
+   example : 
+   function resolveAfter2Seconds(){
+      return new Promise(resolve => {
+         setTimeout(() => {
+            resolve('resolved')
+         },2000)
+      })
+   }
+  in async way ///
+   async function asyncCall(){
+      const result = await resolveAfter2Seconds();
+      console.log(result);//resolved
+   }
+
+   in older way//
+
+   resolveAfter2Seconds().then(result => {
+      console.log(result)// resolved
+   })
+
+
+
+Q. What is the use of `const json = await data.json();` in getRestaurants()
+A. We streaming the data in javascript object form.
+
+Q. What are various ways to add images into our App? Explain with code examples?
+A. Can give direct path from folder and other way is we can import imagae via ES6 module import.
+
+Q. What would happen if we do console.log(useState())?
+A. It wi ll return array. 
+
+Q. How will useEffect behave if we don't add a dependency array ?
+A. Then callback function of useEffect will invoke on every render or re render of component.
+
+Q. What is SPA?
+A. It is Single page application that meanse only all ui will wrap inside one HTML file.
+
+Q. What is difference between Client Side Routing and Server Side Routing?
+A. Client side rendering means everything is loaded on Browser and on every nagitaion it is loading data from 
+   browser side and in server it's load data from server side on every navigation.
+
+Q. How do you create Nested Routes react-router-dom cofiguration?
+A. We can create nested routes by using children inside parent route.
+
+Q Read abt createHashRouter, createMemoryRouter from React Router docs?
+A. createHashRouter : - This router is used when you are unbale to configure your web to direct all traffic to
+                        your React Router application. Instead of using normal URLs, it will use hash(#) portion
+                        of the URL to manage "application URL".
+createMemoryRouter : -  Instead of using browser history, a memory router manges it's own history stack in memory.
+
+Q. What is the order of life cycle method calls in Class Based Components?
+A. First it will be like this : - 
+         Constructor >> render >> componentDidMount >> componentDidUpdate >> ComponentWillUnmount.
+          There is two phase in react first is "Render Phase" and second is "Commit Phase"
+
+Q. Why do we use componentDidMount?
+A. We use componentDidMount to update the DOM after intial render.
+   ex: to make an api call to update DOM.
+
+Q. Why do we use componentWillUnmount? Show with example.
+A. We use componentWillUnmount to destroy the component when you are leaving the page or navigating to other page.
+
+Q. Why do we use super (props) in constructor?   
+A. Super() is used to intialize parent class constructor. If there is constructor present in sub class it needs to 
+first call super() before using "this". A contructor can use the super keyword to call the constructor of parent class.
+
+Q. Why can't we have the callback function of useEffect async?
+A. Because useEffect hook expects a cleanup function returned from it which is called whent the component unmounts.
+   Using async in callback here will cause the bug as the cleanup function will never get called.
+
+Q. When and why do we need lazy()?
+A. We need lazy when if we wan to split our code in to multiple chunks to improve our browser preformance scable app.
+   We can breal large application into chunks and load that specific pages or chunks via dynamic import when needs.
+   Means we can load our components on demand.
+ [
+   Important notes * :
+      {
+         
+            Chunking 
+            Code Splitting
+            Dynamic BUNDLING
+            Lazy loading
+            on demand loading
+            dynamic import
+
+            All these concept are same
+      }
+]
+
+Q. What is suspense?
+A. Suspense use when we are dynamically importing our compnents. Why we need this because when we loading our Component
+   on demand React suspend rendering or loading. Intial we need Suspense to show intial data before rendering
+   dynamic component we use Suspense. We wrap the dynamic component inside Suspense
+   ex: <Suspense fallback={<ShimmerUI />}>
+          <DynamicComponent />
+       <Suspense/>
+
+Q. Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be 
+   replaced with a loading indicator. To fix, update with startTransition? How does suspense fix this error?
+A. With the use of Suspense.
+
+Q. Advantages and disadvantages of using this code splitting pattern?
+A. Advantages:
+   To make app faster.
+   We can load components on demand.
+
+   Disadvantages:
+   The only drawback about code spliting is that you can only use it in client side rendering.
+
+Q. When do we and why do we need suspense?
+A. Suspense use when we are dynamically importing our compnents. Why we need this because when we loading our Component
+   on demand React suspend rendering or loading. Intial we need Suspense to show intial data before rendering
+   dynamic component we use Suspense. We wrap the dynamic component inside Suspense.
+
+Q. How do we configure tailwind?
+A. 1. First we have to check for which package bunbler we are using. For example we are using parcel bundler for parcel 
+   we have to run command via npm is "npm install -D tailwindcss postcss" 
+   2. After that we have to run "npx tailwindcss init".
+   3. Then we will have "tailwindConfig.js" file. In this file we have to set file extenstion in "content" to tell tailwindcss
+   that these file shoud be supported.
+   4. then we have to create ".postcssrc" {"plugins": {"tailwindcss":{}}} file to transpile tailwind css to normal css.
+
+Q. Why do we have .postcssrc file?
+A. It's a transpiler which transpile or covert the tailwind css to normal css.
+
+Q. In tailwind.config.js, what does all the keys mean (content, theme, extend, plugins)?
+A. Content: here we give file extensions name which will be supportable for tailwind.
+   theme: We can give our custome theme like new css classes, we can change font family.
+   extend: Via update we can update the exisitng tailwind classess or we can extends more classes.
+
+Q. What is prop drilling?
+A. If we are passing data from GrandParent component to child component via props known as Props Drilling.
+   Means passing data into downward hirearchy.
+
+Q. What is lifting the state up?
+A. Controlling the state from parent for child component.
+   Sharing state accomplished by moving it up to the closet common ancestor of the components that need it.
+
+Q. What is Context Provider and Context Consumer?
+A. Context Provider: Wrap those component inside Context.Provider where you want to share data.
+   <UserContext.Provider value={
+      user:{},
+      setUser: setUser
+   }>
+       <Home />
+       <About />
+   </UserContext.Provider>
+
+   Context Consumer: We used this in class component to consume the data.
+   <UserContext.Consumer>
+   {({user}) => <h4>{user.name}</h4>}
+   </UserContext.Consumer>
+
+
+Q. If you don’t pass a value to the provider does it take the default value?
+A. Yes, it will take default value.
+
+Q. useContext vs Redux?
+A. useContex: is built in react hooks that allows components to consume data from a parent component's context without need 
+   of props drilling. Context is a way to pass data through the component tree without having to pass props down manually 
+   at every level. It is useful when you have data that needs to be share across many compponents that are not allowed 
+   directly related, or when you want to avoid passing props throught intermediate compnents.
+
+   Redux: is state mangement library that provides centralized store for managing the state of an application. It uses a 
+   predictable state contaier and a set of rules to ensure that state changes are made in a consistetnt and predictble way.
+   Redux is best suited for complex application with lots of shared state, where it can help manage the complexity of
+   data flow.
+   
+   In summary Redux is standalone library that is best suited for complext apllication with a lots of shared state, while 
+   useContext is a built-in React hook that best suited for passing data bewteen components without having to pass props
+   manually.
+
+Q. Advantages of using Redux Toolkit over Redux?
+A. Redux toolkit is set of opnionated utlities that make it easier to use Redux, with foucas on simplifying common use cases
+   and reducing the boilerplate code. It is built on top of redux, so it provides all the same benefits of Redux but with 
+   the same additional advantages, including:
+
+   1. Simplified code: Redux toolkit reduce the amount of boilerplate code required to setup the Redux store. It provides a 
+      simpler , more inttutive API for defining reducers, actions and selectors.
+   2. Improved performance: Redux toolkit inclueds the `createSlice` function which automatically generates action creators
+      and reducers base on a defined slice of state. It is improve number of unnecessary re-renders that can occurs manually
+      defining action creators and reducers.
+   3. Built-in Immutability: Redux toolkit includes `immer` library, which manage to mutate the state driectly without
+      changing the original state.
+   4. Simplified asynchronous code: Redux toolkit include `createAsyncThunk` function which simlified the operation of 
+      async actions. This fuction automatically generated action creators and reducers for hanlding loading, success and
+      error states for asynchronous actions.
+
+Q. Explain Dispatcher?
+A. If we want to perform any action we need useDispatch to dispatch an action.
+
+Q. Explain Reducer?
+A. After dispatching an action we will call reducers function.
+
+Q. Explain SLice?
+A. When we called reducers function it will update perticular slice of store.
+
+Q. Explain selector?
+A. When slice of store is updated then with help of useSelector we will subscribe the data into our components.
+
+Q. Explain createSlice and the configuration it takes?
+A. RTK provides us a function or API that createSlice with help of createSlice we can create slice of store.
+   ex: const cartSlice = createSlice({
+      name:"Cart",
+      intialState:{
+         items:[]
+      },
+      reducers:{
+         addItem:(state, action) => {
+            state.items.push(action.pauload);
+         },
+         removeItem:(statw, action) => {
+         state.items.pop();
+         },
+         clearCart:(state) => {
+            state.items = [];
+         }
+      }
+   });
+
+   export const {addItem, removeItem, clearCart} = cartSlice.actions;
+
+   export default cartSlice.reducer;
+
+
+Q. What are the different types of testing?
+A. Manula testing, e2e testing, Automation testing, Unit testing, integration testing, regression testing etc.
+
+Q. What is Enzyme?
+A. Enzyme is javascript testing library mainly used for React Unit testing. It meant to test the react application. It does manipulation,
+   assertion and traverse react component's output.
+
+Q. Enzyme vs React Testing Library?
+A. Enzyme was intorduced in 2015, it's a small testing library often combined with jest to create test cases.
+   React testing library introduced in 2018, it's built on top of the DOM testing libray. It's offer DOM manipulation 
+   event like fireEvent. It;s equivalent to real user interaction.
+
+Q. What is Jest and why do we use it?
+A. Jest is Javascript testing Framework, it works with Bbel, TypeScript, Node, React, Angular, Vue and more!
+  
+   
+
